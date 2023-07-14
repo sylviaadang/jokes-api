@@ -1,4 +1,5 @@
-const JokeController = require('../controllers/joke.controller');
+console.log("THIS IS ROUTES")
+const JokeController = require('../controllers/jokes.controller');
 
 
 module.exports = app => {

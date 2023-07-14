@@ -1,4 +1,4 @@
-const Joke = require('../models/jok.model');
+const Joke = require('../models/jokes.model');
 
 module.exports.findAllJokes = (req, res) => {
     Joke.find()
@@ -20,7 +20,7 @@ module.exports.findOneJoke = (req, res) => {
         })
 }
 
-module.exports.createJoke() = (req, res) => {
+module.exports.createJoke = (req, res) => {
     Joke.create(req.body)
         .then(newJoke => {
             res.json({ joke: newJoke })
@@ -30,7 +30,7 @@ module.exports.createJoke() = (req, res) => {
         });
 }
 
-module.exports.updateJoke() = (req, res) => {
+module.exports.updateJoke = (req, res) => {
     Joke.findOneAndUpdate(
         { _id: req.params.id },
         req.body,
@@ -44,7 +44,7 @@ module.exports.updateJoke() = (req, res) => {
     });
 }
 
-module.exports.deleteJoke() = (req, res) => {
+module.exports.deleteJoke = (req, res) => {
     Joke.deleteOneJoke( { _id: req.params.id })
         .then(result => {
             res.json({ result: result })
